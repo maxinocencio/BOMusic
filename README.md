@@ -6,4 +6,4 @@ Mp3 player em python (tkinter)
 - Isabel Duarte
 - Gustavo Nicolino
 - Max Lander Inocêncio
-- Olívia Roquine
+- Olívia Roquini
