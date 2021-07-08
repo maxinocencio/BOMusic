@@ -85,6 +85,10 @@ class Musicas(Toplevel):
 
 #    def imgBtn(self):
 
+    def show(self):
+        self.update()
+        self.deiconify()
+
 
     def botoes(self):
 

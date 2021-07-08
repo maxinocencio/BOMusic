@@ -16,11 +16,11 @@ class App2(Toplevel):
         
         self.config()
         self.frames()
-        self.widgetsButton()
+        self.widgetsButton1()
         self.widgetsButton2()
+        self.widgetsButton3()
         self.widgetsimg()
         self.widgetstitulo()
-        self.widgetsButton3()
 
     def config(self):
         self.title('BoMusic')
@@ -49,6 +49,11 @@ class App2(Toplevel):
         #self.subFrame = Musicas(self)
         self.stop()
 
+    def onClose(self):
+        self.stop()
+        self.destroy()
+        self.frame_original.show()
+
     def frames(self):
         self.titulo = Frame(
             self,
@@ -74,13 +79,25 @@ class App2(Toplevel):
             height = 100
         )
 
+        self.voltar = Frame(
+            self,
+            bg = self.cor3,
+        )
+
+        self.voltar.place(
+            x = 12.5,
+            y = 280,
+            width = 110,
+            height = 50
+        )
+
         self.play = Frame(
             self,
             bg = self.cor1,
         )
 
         self.play.place(
-            x = 12.5,
+            x = 135,
             y = 280,
             width = 110,
             height = 50
@@ -92,18 +109,6 @@ class App2(Toplevel):
         )
 
         self.parar.place(
-            x = 135,
-            y = 280,
-            width = 110,
-            height = 50
-        )
-
-        self.voltar = Frame(
-            self,
-            bg = self.cor3,
-        )
-
-        self.voltar.place(
             x = 257.5,
             y = 280,
             width = 110,
@@ -128,7 +133,26 @@ class App2(Toplevel):
         )
         self.img2.pack()
 
-    def widgetsButton(self):
+    def widgetsButton1(self):
+        self.botao3 = Button(
+            self.voltar,
+            text = 'Voltar',
+            font = ('Poppins', 25),
+            fg = self.cor3,
+            activeforeground = self.cor3,
+            bg = self.cor2,
+            activebackground = self.cor2,
+            command=self.onClose
+        )
+
+        self.botao3.place(
+            relx = 0,
+            rely = 0,
+            relwidth = 1,
+            relheight = 1
+        ) 
+
+    def widgetsButton2(self):
         self.botao = Button(
             self.play,
             text = 'Play',
@@ -147,7 +171,7 @@ class App2(Toplevel):
             relheight = 1
         )     
         
-    def widgetsButton2(self):
+    def widgetsButton3(self):
         self.botao2 = Button(
             self.parar,
             text = 'Stop',
@@ -165,22 +189,3 @@ class App2(Toplevel):
             relwidth = 1,
             relheight = 1
         )
-
-    def widgetsButton3(self):
-        self.botao3 = Button(
-            self.voltar,
-            text = 'Voltar',
-            font = ('Poppins', 25),
-            fg = self.cor3,
-            activeforeground = self.cor3,
-            bg = self.cor2,
-            activebackground = self.cor2,
-            command=self.clickbtn
-        )
-
-        self.botao3.place(
-            relx = 0,
-            rely = 0,
-            relwidth = 1,
-            relheight = 1
-        ) 

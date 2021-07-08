@@ -1,12 +1,12 @@
 from tkinter import * # importando bibliotecas.
 import pygame          # importando bibliotecas.
 
-from musica1 import App  #importando classes
-from musicas import Musicas 
+from musica1 import App
+from musicas import Musicas
 
 class Inicio():
-    cor1 = '#171717'           
-    cor2 = '#58009D'    #variáveis de cores
+    cor1 = '#171717'
+    cor2 = '#58009D'
     cor3 = '#efefef'
 
     def __init__(self):
@@ -14,7 +14,7 @@ class Inicio():
         
         self.config()
         self.frames()
-        self.widgetsButton()        #aplicação de configurações do layout
+        self.widgetsButton()
         self.widgetstitulo()
         self.widgetsimg()
 
@@ -22,28 +22,28 @@ class Inicio():
 
     def config(self):
         self.root.title('BoMusic')
-        self.root.geometry('380x380+700+350')       # configuração de layout
+        self.root.geometry('380x380+700+350')
         self.root.resizable(False, False)
         self.root.configure(bg = self.cor1)
         pygame.mixer.init()
         self.root.iconbitmap('provaDevSistemas\icone.ico')
 
     def hide(self):
-        self.root.withdraw()    #funções 
+        self.root.withdraw()
 
     def clickbtn(self):
-        self.hide()                 #funções
+        self.hide()
         self.subFrame = Musicas(self)
 
     def frames(self):
         self.titulo = Frame(
-            self.root,              #funções frames
+            self.root,
             bg = self.cor1,
         )
 
         self.titulo.place(
             x = 0,
-            y = 20,                    #posicionando
+            y = 20,
             width = 380,
             height = 100
         )
@@ -53,7 +53,7 @@ class Inicio():
             bg = self.cor3,
         )
 
-        self.logo.place(                        #posicionando widgets
+        self.logo.place(
             x = 140,
             y = 140,
             width = 100,
@@ -74,12 +74,12 @@ class Inicio():
         
     def widgetstitulo(self):
         title = Label(self.titulo,
-            text='BOMusic',                         #criando widgets
+            text='BOMusic',
             font=('Poppins', 35, 'bold'),
             bg = self.cor1,
             fg = self.cor2,
         )
-        title.place(rely = 0.06, relx = 0.22)           #posicionando widgets
+        title.place(rely = 0.06, relx = 0.22)
 
     def widgetsimg(self):
         self.fone = PhotoImage(file = 'provaDevSistemas\logo.png')
@@ -88,14 +88,14 @@ class Inicio():
             image = self.fone,
             bd = 0
         )
-        self.img.pack()                                          #posicionando widgets
+        self.img.pack()
 
     def widgetsButton(self):
         self.botao = Button(
             self.play,
             text = 'Entrar',
             font = ('Poppins', 25),
-            fg = self.cor3,                                           #criando widgets
+            fg = self.cor3,
             activeforeground = self.cor3,
             bg = self.cor2,
             activebackground = self.cor2,
@@ -104,10 +104,10 @@ class Inicio():
 
         self.botao.place(
             x = 102.5,
-            y = 12.5,                                                  #posicionando widgets
+            y = 12.5,
             width = 175,
             height = 75
         ) 
-            
+        
 root = Tk()
-Inicio()                                                            #programa principal
+Inicio()
