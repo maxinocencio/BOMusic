@@ -1,4 +1,6 @@
-'''BOMusic'''            #nome do app
+'''BOMusic'''               #nome do app
+
+#https://github.com/maxinocencio/BOMusic
 
 from tkinter import *       #importando bibliotecas 
 import pygame               #importando bibliotecas 
@@ -30,10 +32,10 @@ class App(Toplevel):
         self.resizable(False, False)
         self.configure(bg = self.cor1)
         pygame.mixer.init()
-        self.iconbitmap('provaDevSistemas\icone.ico')
+        self.iconbitmap('icone.ico')
 
     def som(self):
-        pygame.mixer.music.load('provaDevSistemas\musica1.mp3')  #função de iniciar musica
+        pygame.mixer.music.load('musica1.mp3')  #função de iniciar musica
         pygame.mixer.music.play()
         StopIteration
 
@@ -122,7 +124,7 @@ class App(Toplevel):
         title.pack()
 
     def widgetsimg(self):
-        self.album = PhotoImage(file = r'provaDevSistemas\album1.png')      #posicionando foto do álbum
+        self.album = PhotoImage(file = 'album1.png')      #posicionando foto do álbum
         self.img2 = Label(
             self.logo,
             image = self.album,

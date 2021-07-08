@@ -1,3 +1,7 @@
+'''BOMusic'''
+
+#https://github.com/maxinocencio/BOMusic
+
 from tkinter import * # importando bibliotecas.
 import pygame          # importando bibliotecas.
 
@@ -26,7 +30,7 @@ class Inicio():
         self.root.resizable(False, False)
         self.root.configure(bg = self.cor1)
         pygame.mixer.init()
-        self.root.iconbitmap('provaDevSistemas\icone.ico')
+        self.root.iconbitmap('icone.ico')
 
     def hide(self):
         self.root.withdraw()
@@ -82,7 +86,7 @@ class Inicio():
         title.place(rely = 0.06, relx = 0.22)
 
     def widgetsimg(self):
-        self.fone = PhotoImage(file = 'provaDevSistemas\logo.png')      #aplicando foto de titulo
+        self.fone = PhotoImage(file = 'logo.png')      #aplicando foto de titulo
         self.img = Label(
             self.logo,
             image = self.fone,

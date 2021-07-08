@@ -1,4 +1,7 @@
 '''BOMusic'''
+
+#https://github.com/maxinocencio/BOMusic
+
 from tkinter import *
 from musica1 import App
 from musica2 import App2  #Importanto as classes 
@@ -26,7 +29,7 @@ class Musicas(Toplevel):
         self.geometry('380x380+700+350')
         self.resizable(False, False)
         self.configure(bg = self.cor3)
-        self.iconbitmap('provaDevSistemas\icone.ico')
+        self.iconbitmap('icone.ico')
 
     def clickbtn(self):        #Mostra a primeira tela 
         self.withdraw()
@@ -92,7 +95,7 @@ class Musicas(Toplevel):
 
     def botoes(self):
 
-        self.imgbtn1 = PhotoImage(file = 'provaDevSistemas\imgbtn1.png')
+        self.imgbtn1 = PhotoImage(file = 'imgbtn1.png')
 
         self.botao1 = Button(       #Botão imagem 
             self.album1,
@@ -109,7 +112,7 @@ class Musicas(Toplevel):
 
         ###################
 
-        self.imgbtn2 = PhotoImage(file = 'provaDevSistemas\imgbtn2.png')
+        self.imgbtn2 = PhotoImage(file = 'imgbtn2.png')
 
         self.botao2 = Button(   #Botão imagem 
             self.album2,
@@ -125,7 +128,7 @@ class Musicas(Toplevel):
         )
         ###################
 
-        self.imgbtn3 = PhotoImage(file = 'provaDevSistemas\imgbtn3.png')
+        self.imgbtn3 = PhotoImage(file = 'imgbtn3.png')
 
         self.botao3 = Button(   #Botão imagem 
             self.album3,
