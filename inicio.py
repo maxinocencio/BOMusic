@@ -1,12 +1,12 @@
 from tkinter import * # importando bibliotecas.
 import pygame          # importando bibliotecas.
 
-from musica1 import App
+from musica1 import App         
 from musicas import Musicas
 
 class Inicio():
     cor1 = '#171717'
-    cor2 = '#58009D'
+    cor2 = '#58009D'    #variáveis de cores
     cor3 = '#efefef'
 
     def __init__(self):
@@ -14,7 +14,7 @@ class Inicio():
         
         self.config()
         self.frames()
-        self.widgetsButton()
+        self.widgetsButton()            #aplicando alterações
         self.widgetstitulo()
         self.widgetsimg()
 
@@ -22,7 +22,7 @@ class Inicio():
 
     def config(self):
         self.root.title('BoMusic')
-        self.root.geometry('380x380+700+350')
+        self.root.geometry('380x380+700+350')           #configurando layout e geometria do app
         self.root.resizable(False, False)
         self.root.configure(bg = self.cor1)
         pygame.mixer.init()
@@ -32,16 +32,16 @@ class Inicio():
         self.root.withdraw()
 
     def clickbtn(self):
-        self.hide()
+        self.hide()                         #criando botão voltar
         self.subFrame = Musicas(self)
 
     def frames(self):
         self.titulo = Frame(
-            self.root,
+            self.root,                      #criando frames
             bg = self.cor1,
         )
 
-        self.titulo.place(
+        self.titulo.place(                  #posicionando frames
             x = 0,
             y = 20,
             width = 380,
@@ -75,27 +75,27 @@ class Inicio():
     def widgetstitulo(self):
         title = Label(self.titulo,
             text='BOMusic',
-            font=('Poppins', 35, 'bold'),
+            font=('Poppins', 35, 'bold'),       #criando título
             bg = self.cor1,
             fg = self.cor2,
         )
         title.place(rely = 0.06, relx = 0.22)
 
     def widgetsimg(self):
-        self.fone = PhotoImage(file = 'provaDevSistemas\logo.png')
+        self.fone = PhotoImage(file = 'provaDevSistemas\logo.png')      #aplicando foto de titulo
         self.img = Label(
             self.logo,
             image = self.fone,
             bd = 0
         )
-        self.img.pack()
+        self.img.pack()                             #posicionando foto 
 
     def widgetsButton(self):
         self.botao = Button(
             self.play,
             text = 'Entrar',
             font = ('Poppins', 25),
-            fg = self.cor3,
+            fg = self.cor3,                 #criando botão de entrada e posicionando
             activeforeground = self.cor3,
             bg = self.cor2,
             activebackground = self.cor2,
@@ -109,5 +109,5 @@ class Inicio():
             height = 75
         ) 
         
-root = Tk()
+root = Tk()                     #programa principal
 Inicio()
