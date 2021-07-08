@@ -1,12 +1,12 @@
 '''BOMusic'''
 
-from tkinter import *
-import pygame
+from tkinter import *       #importando bibliotecas
+import pygame               #importando bibliotecas
 
 class App2(Toplevel):
 
     cor1 = '#171717'
-    cor2 = '#58009D'
+    cor2 = '#58009D'        #variantes de cores
     cor3 = '#efefef'
 
     def __init__(self, original):
@@ -17,21 +17,21 @@ class App2(Toplevel):
         self.config()
         self.frames()
         self.widgetsButton1()
-        self.widgetsButton2()
+        self.widgetsButton2()           #aplicando funções no app
         self.widgetsButton3()
         self.widgetsimg()
         self.widgetstitulo()
 
     def config(self):
         self.title('BoMusic')
-        self.geometry('380x380+700+350')
+        self.geometry('380x380+700+350')            #configurando geometria e configurações
         self.resizable(False, False)
         self.configure(bg = self.cor1)
         pygame.mixer.init()
         self.iconbitmap('provaDevSistemas\icone.ico')
 
     def som(self):
-        pygame.mixer.music.load('provaDevSistemas\musica2.mp3')
+        pygame.mixer.music.load('provaDevSistemas\musica2.mp3')         #função de iniciar música
         pygame.mixer.music.play()
         StopIteration
 
@@ -39,23 +39,23 @@ class App2(Toplevel):
         print('')
 
     def stop(self):
-        pygame.mixer.music.pause()
+        pygame.mixer.music.pause()          #função de parar música
         print('parando')
         print('')
         StopIteration
 
     def clickbtn(self):
         self.withdraw()
-        #self.subFrame = Musicas(self)
+        #self.subFrame = Musicas(self)      #função de pausar música
         self.stop()
 
     def onClose(self):
         self.stop()
         self.destroy()
-        self.frame_original.show()
+        self.frame_original.show()          #função de voltar
 
     def frames(self):
-        self.titulo = Frame(
+        self.titulo = Frame(            # até linha 117 criando e colocando frames
             self,
             bg = self.cor1,
         )
@@ -117,7 +117,7 @@ class App2(Toplevel):
 
     def widgetstitulo(self):
         title = Label(self.titulo,
-            text='CMK, Knust, Azzy\nAntes de Partir',
+            text='CMK, Knust, Azzy\nAntes de Partir',           #colocando título na música
             font=('Poppins', 20, 'bold'),
             bg = self.cor1,
             fg = self.cor2,
@@ -125,19 +125,19 @@ class App2(Toplevel):
         title.pack()
 
     def widgetsimg(self):
-        self.album = PhotoImage(file = r'provaDevSistemas\album2.png')
+        self.album = PhotoImage(file = r'provaDevSistemas\album2.png')      #colocando foto do álbum
         self.img2 = Label(
             self.logo,
             image = self.album,
             bd = 0
         )
-        self.img2.pack()
+        self.img2.pack()                #posicionando foto de álbum
 
     def widgetsButton1(self):
         self.botao3 = Button(
             self.voltar,
             text = 'Voltar',
-            font = ('Poppins', 25),
+            font = ('Poppins', 25),             #criando botão de voltar
             fg = self.cor3,
             activeforeground = self.cor3,
             bg = self.cor2,
@@ -145,7 +145,7 @@ class App2(Toplevel):
             command=self.onClose
         )
 
-        self.botao3.place(
+        self.botao3.place(                  #posicionando botão de voltar
             relx = 0,
             rely = 0,
             relwidth = 1,
@@ -155,7 +155,7 @@ class App2(Toplevel):
     def widgetsButton2(self):
         self.botao = Button(
             self.play,
-            text = 'Play',
+            text = 'Play',                  #colocando botão de iniciar
             font = ('Poppins', 25),
             fg = self.cor3,
             activeforeground = self.cor3,
@@ -164,7 +164,7 @@ class App2(Toplevel):
             command=self.som
         )
 
-        self.botao.place(
+        self.botao.place(               #posicionando botão de colocar
             relx = 0,
             rely = 0,
             relwidth = 1,
@@ -174,7 +174,7 @@ class App2(Toplevel):
     def widgetsButton3(self):
         self.botao2 = Button(
             self.parar,
-            text = 'Stop',
+            text = 'Stop',              #colocando botão de pausar
             font = ('Poppins', 25),
             fg = self.cor3,
             activeforeground = self.cor3,
@@ -183,7 +183,7 @@ class App2(Toplevel):
             command=self.stop
         )
 
-        self.botao2.place(
+        self.botao2.place(          #posicionando botão de pausar
             relx = 0,
             rely = 0,
             relwidth = 1,
