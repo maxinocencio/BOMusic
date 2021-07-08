@@ -1,10 +1,9 @@
 # BOMusic
 Mp3 player em python (tkinter)
 
-Grupo:
-
-- Max
-- Isabel
-- Olivia
-- Emili
-- Gustavo
+# Participantes:
+- Emili Calixo
+- Isabel Duarte
+- Gustavo Nicolino
+- Max Lander Inocêncio
+- Olívia Roquine
