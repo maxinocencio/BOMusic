@@ -5,7 +5,7 @@ import pygame
 
 class App3(Toplevel):
 
-    cor1 = '#171717'
+    cor1 = '#171717' # Variavel para cor
     cor2 = '#58009D'
     cor3 = '#efefef'
 
@@ -14,7 +14,7 @@ class App3(Toplevel):
         self.frame_original = original
         Toplevel.__init__(self)      
         
-        self.config()
+        self.config() #Chamando def
         self.frames()
         self.widgetsButton1()
         self.widgetsButton2()
@@ -22,7 +22,7 @@ class App3(Toplevel):
         self.widgetsimg()
         self.widgetstitulo()
 
-    def config(self):
+    def config(self): #Configuração da tela
         self.title('BoMusic')
         self.geometry('380x380+700+350')
         self.resizable(False, False)
@@ -30,7 +30,7 @@ class App3(Toplevel):
         pygame.mixer.init()
         self.iconbitmap('provaDevSistemas\icone.ico')
 
-    def som(self):
+    def som(self): #Colocando a música
         pygame.mixer.music.load('provaDevSistemas\musica3.mp3')
         pygame.mixer.music.play()
         StopIteration
@@ -38,24 +38,24 @@ class App3(Toplevel):
         print('tocando')
         print('')
 
-    def stop(self):
+    def stop(self): #Comando para parar a música
         pygame.mixer.music.pause()
         print('parando')
         print('')
         StopIteration
 
-    def clickbtn(self):
+    def clickbtn(self): #Comando que esconde root 
         self.withdraw()
         #self.subFrame = Musicas(self)
         self.stop()
 
-    def onClose(self):
+    def onClose(self): #Comando fechar tela e abrir outra
         self.stop()
         self.destroy()
         self.frame_original.show()
 
-    def frames(self):
-        self.titulo = Frame(
+    def frames(self): 
+        self.titulo = Frame(  #Titulo
             self,
             bg = self.cor1,
         )
@@ -67,7 +67,7 @@ class App3(Toplevel):
             height = 100
         )
 
-        self.logo = Frame(
+        self.logo = Frame( #Logo
             self,
             bg = self.cor1,
         )
@@ -91,7 +91,7 @@ class App3(Toplevel):
             height = 50
         )
 
-        self.play = Frame(
+        self.play = Frame( # Botão play
             self,
             bg = self.cor1,
         )
@@ -103,7 +103,7 @@ class App3(Toplevel):
             height = 50
         )
 
-        self.parar = Frame(
+        self.parar = Frame( # Botão de parar
             self,
             bg = self.cor3,
         )
@@ -115,7 +115,7 @@ class App3(Toplevel):
             height = 50
         )
 
-    def widgetstitulo(self):
+    def widgetstitulo(self): #Nome da musica
         title = Label(self.titulo,
             text='Twenty One Pilots\nShy Away',
             font=('Poppins', 20, 'bold'),
@@ -124,7 +124,7 @@ class App3(Toplevel):
         )
         title.pack()
 
-    def widgetsimg(self):
+    def widgetsimg(self): # Aplicando imagem botão 
         self.album = PhotoImage(file = r'provaDevSistemas\album3.png')
         self.img2 = Label(
             self.logo,
@@ -133,7 +133,7 @@ class App3(Toplevel):
         )
         self.img2.pack()
 
-    def widgetsButton1(self):
+    def widgetsButton1(self): # Configuração do botão
         self.botao3 = Button(
             self.voltar,
             text = 'Voltar',
@@ -152,7 +152,7 @@ class App3(Toplevel):
             relheight = 1
         ) 
 
-    def widgetsButton2(self):
+    def widgetsButton2(self): # Aplicando imagem botão 
         self.botao = Button(
             self.play,
             text = 'Play',
@@ -171,7 +171,7 @@ class App3(Toplevel):
             relheight = 1
         )     
         
-    def widgetsButton3(self):
+    def widgetsButton3(self): # Aplicando imagem botão 
         self.botao2 = Button(
             self.parar,
             text = 'Stop',
