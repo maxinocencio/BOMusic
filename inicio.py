@@ -1,5 +1,5 @@
-from tkinter import *
-import pygame
+from tkinter import * # importando bibliotecas.
+import pygame          # importando bibliotecas.
 
 from musica1 import App
 from musicas import Musicas
